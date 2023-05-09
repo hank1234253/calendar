@@ -12,14 +12,17 @@
     }
 
     body {
+      margin: 0 auto;
+      padding: 0;
       background-image: url(./img/bg.jpg);
       background-size: 100%;
-      width: 1900px;
-      height: 860px;
+      width: 95vw;
+      height: 95vh;
       animation-name:bg;
       animation-duration: 70s;
       animation-iteration-count:infinite;
       animation-timing-function:linear;
+      
     }
 
     @keyframes bg {
@@ -30,7 +33,7 @@
         background-size: 120%;
       }
       to{
-        background-color: 100%;
+        background-size: 100%;
       }
     }
 
@@ -41,18 +44,17 @@
       display: flex;
       flex-wrap: wrap;
       width: 1200px;
-      height: 95vh;
-      margin-top: 15px;
-  
+      height: 90vh;
+      margin-top:-20px;
       justify-content: center;
-      padding: 55px 100px 95px 100px;
+      padding: 2vh 100px 95px 100px;
       align-content:flex-start;
-
+      scale:0.85;
     }
 
     .container>div {
       width: calc(100% / 7.6);
-      height: 90px;
+      height: 85px;
       margin: 5px;
       padding-top: 5px;
 background: rgba(255, 255, 255, 0.08);
@@ -142,14 +144,14 @@ color:white;
       position: fixed;
       
       position: fixed;
-      right: 1625px;
+      right: 85vw;
       top: 345px;
     }
     .right-arrow{
       height: 250px;
       width: 150px;
       position: fixed;
-      left: 1625px;
+      left: 85vw;
       top: 345px;
     }
     .arrow:hover{
@@ -276,7 +278,6 @@ color:white;
 
 
 
-  <div style="height:90vh">
     <?php
 $year = (isset($_GET["year"])) ? $_GET["year"] : date("Y");
 $month = (isset($_GET["month"])) ? $_GET["month"] : date("n");
@@ -430,10 +431,7 @@ for ($i = 0; $i < count($months); $i++) {
 }
 ?>
     </div>
-  </div>
-  <div>
-    <a href="?" style="position:fixed;bottom:0;right:0;">回當前月</a>
-  </div>
+
 </body>
 
 </html>
