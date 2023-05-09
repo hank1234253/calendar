@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>萬年曆</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     * {
       box-sizing: border-box;
@@ -16,8 +17,8 @@
       padding: 0;
       background-image: url(./img/bg.jpg);
       background-size: 100%;
-      width: 95vw;
-      height: 95vh;
+      width: 100vw;
+      height: 100vh;
       animation-name:bg;
       animation-duration: 70s;
       animation-iteration-count:infinite;
@@ -39,22 +40,21 @@
 
 
     .container {
-      margin: 0 auto;
       text-align: center;
       display: flex;
       flex-wrap: wrap;
-      width: 1200px;
-      height: 90vh;
+      width: 80vw;
+      height: 100vh;
       margin-top:-20px;
       justify-content: center;
       padding: 2vh 100px 95px 100px;
       align-content:flex-start;
-      scale:0.85;
+
     }
 
     .container>div {
-      width: calc(100% / 7.6);
-      height: 85px;
+      width: calc(100% / 7 - 10px);
+      height: calc(85% / 7);
       margin: 5px;
       padding-top: 5px;
 background: rgba(255, 255, 255, 0.08);
@@ -66,11 +66,8 @@ border: 1px solid rgba(255, 255, 255, 0.93);
       font-size: 24px;
     }
 
-    .container>.days:hover,
-    .container>.today:hover,
-    .container>.weekend:hover,
-    .container>.holiday:hover,
-    .container>.work:hover {
+    
+    .container>div:hover {
 
       
 background: rgba(255, 255, 255, 0.36);
@@ -121,8 +118,8 @@ border: 1px solid rgba(255, 255, 255, 0.93);
       color:white;
     }
     .container>.title {
-      width: 980px;
-      height: 100px;
+      width: 80vw;
+      height: 15vh;
       background: rgba(255, 255, 255, 0.08);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -141,23 +138,14 @@ color:white;
     .left-arrow{
       height: 250px;
       width: 150px;
-      position: fixed;
-      
-      position: fixed;
-      right: 85vw;
-      top: 345px;
     }
     .right-arrow{
       height: 250px;
       width: 150px;
-      position: fixed;
-      left: 85vw;
-      top: 345px;
     }
     .arrow:hover{
       height: 280px;
-      width: 180px;
-      top:330px;
+      width: 150px;
     }
     .star{
       height: 800px;
@@ -265,6 +253,14 @@ color:white;
         top: 1000px;
       }
     }
+    .contain{
+      width: 100vw;
+      height:100vh;
+      margin:0;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 
@@ -345,9 +341,8 @@ $work = [
 ];
 
 ?>
-
+<div class="contain">
 <a href="?year=<?=$lastYear?>&month=<?=$lastMonth?>"><img src="./img/left-arrow.png" alt="" class="left-arrow arrow"></img></a>
-<a href="?year=<?=$nextYear?>&month=<?=$nextMonth?>"><img src="./img/right-arrow.png" alt="" class="right-arrow arrow"></img></a>
 
     <div class="container">
       <div class="title">
@@ -431,7 +426,9 @@ for ($i = 0; $i < count($months); $i++) {
 }
 ?>
     </div>
+<a href="?year=<?=$nextYear?>&month=<?=$nextMonth?>"><img src="./img/right-arrow.png" alt="" class="right-arrow arrow"></img></a>
 
+    </div>
 </body>
 
 </html>
