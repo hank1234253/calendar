@@ -6,429 +6,145 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>萬年曆</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0 auto;
-      padding: 0;
-      background-image: url(./img/bg.jpg);
-      background-size: 100%;
-      width: 100vw;
-      height: 100vh;
-      animation-name:bg;
-      animation-duration: 70s;
-      animation-iteration-count:infinite;
-      animation-timing-function:linear;
-      
-    }
-
-    @keyframes bg {
-      from{
-        background-size: 100%;
-      }
-      50%{
-        background-size: 120%;
-      }
-      to{
-        background-size: 100%;
-      }
-    }
-
-
-    .container {
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      width: 80vw;
-      height: 100vh;
-      margin-top:-20px;
-      justify-content: center;
-      padding: 2vh 100px 95px 100px;
-      align-content:flex-start;
-
-    }
-
-    .container>div {
-      width: calc(100% / 7 - 10px);
-      height: calc(85% / 7);
-      margin: 5px;
-      padding-top: 5px;
-background: rgba(255, 255, 255, 0.08);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(0px);
--webkit-backdrop-filter: blur(0px);
-border: 1px solid rgba(255, 255, 255, 0.93);
-      font-size: 24px;
-    }
-
-    
-    .container>div:hover {
-
-      
-background: rgba(255, 255, 255, 0.36);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(0px);
--webkit-backdrop-filter: blur(0px);
-border: 1px solid rgba(255, 255, 255, 0.93);
-      font-size: 26px;
-
-    }
-
-    .container>.today {
-      border: 2px solid yellowgreen;
-      color:yellowgreen;
-    }
-
-    .container>.weekend {
-      color: yellow;
-    }
-
-    .month {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      margin-top: 10px;
-    }
-
-    .month>a {
-      width: 100px;
-      margin: 0 5px;
-    }
-
-    .month>span {
-      width: 100px;
-      margin: 0 5px;
-    }
-
-    .container>.holiday {
-      color: yellow;
-    }
-
-    .container>.work {
-      color: white;
-    }
-    .container>.days{
-      color:white;
-    }
-    .container>.title {
-      width: 80vw;
-      height: 15vh;
-      background: rgba(255, 255, 255, 0.08);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(0px);
--webkit-backdrop-filter: blur(0px);
-border: 1px solid rgba(255, 255, 255, 0.93);
-color:white;
-      margin-bottom: 20px;
-      font-family: 'Roboto Mono', monospace;
-    }
-    .title>span{
-      font-size: 50px;
-      line-height: 90px;
-  
-    }
-    .left-arrow{
-      height: 250px;
-      width: 150px;
-    }
-    .right-arrow{
-      height: 250px;
-      width: 150px;
-    }
-    .arrow:hover{
-      height: 280px;
-      width: 150px;
-    }
-    .star{
-      height: 800px;
-      width: 800px;
-      scale: 0.5;
-      position: fixed;
-      animation-name:star;
-      animation-duration: 15s;
-      animation-iteration-count:infinite;
-      animation-timing-function:linear;
-    }
-    @keyframes star{
-      from{
-        left: -500px;
-        top: -500px;
-      }
-      to{
-        left: 70vw;
-        top: 1000px;
-      }
-    }
-    .star2{
-      height: 800px;
-      width: 800px;
-      scale: 0.5;
-      position: fixed;
-      animation-name:star2;
-      animation-duration: 25s;
-      animation-iteration-count:infinite;
-      animation-timing-function:linear;
-    }
-    @keyframes star2{
-      from{
-        left: 0;
-        top: -1000px;
-      }
-      to{
-        left: 100vw;
-        top: 1000px;
-      }
-    }
-    .star3{
-      height: 800px;
-      width: 800px;
-      scale: 0.5;
-      position: fixed;
-      left: -1000px;
-      animation-name:star3;
-      animation-duration: 30s;
-      animation-iteration-count:infinite;
-      animation-timing-function:linear;
-      animation-delay:5s;
-    }
-    @keyframes star3{
-      from{
-        left: -500px;
-        top: -1000px;
-      }
-      to{
-        left: 100vw;
-        top: 1000px;
-      }
-    }
-    .star4{
-      height: 800px;
-      width: 800px;
-      scale: 0.4;
-      position: fixed;
-      left:-1000px;
-      animation-name:star4;
-      animation-duration: 30s;
-      animation-iteration-count:infinite;
-      animation-timing-function:linear;
-      animation-delay:5s;
-    }
-    @keyframes star4{
-      from{
-        left: -500px;
-        top: -500px;
-      }
-      to{
-        left: 70vw;
-        top: 1000px;
-      }
-    }
-    .star5{
-      height: 800px;
-      width: 800px;
-      scale: 0.5;
-      position: fixed;
-      left: -1000px;
-      animation-name:star5;
-      animation-duration: 10s;
-      animation-iteration-count:infinite;
-      animation-timing-function:linear;
-      animation-delay:5s;
-    }
-    @keyframes star5{
-      from{
-        left: -900px;
-        top: -500px;
-      }
-      to{
-        left: 25vw;
-        top: 1000px;
-      }
-    }
-    .contain{
-      width: 100vw;
-      height:100vh;
-      margin:0;
-      display:flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <button type="button" onclick="location.href='../'" class="back">回作品集</button>
 
-    <img src="./img/star.png" alt="" class="star">
-    <img src="./img/star.png" alt="" class="star2">
-    <img src="./img/star.png" alt="" class="star3">
-    <img src="./img/star.png" alt="" class="star4">
-    <img src="./img/star.png" alt="" class="star5">
+  <!-- 背景的流星 -->
+  <img src="./img/star.png" alt="" class="star">
+  <img src="./img/star.png" alt="" class="star2">
+  <img src="./img/star.png" alt="" class="star3">
+  <img src="./img/star.png" alt="" class="star4">
+  <img src="./img/star.png" alt="" class="star5">
+  <img src="./img/star.png" alt="" class="star6">
 
 
 
-    <?php
-$year = (isset($_GET["year"])) ? $_GET["year"] : date("Y");
-$month = (isset($_GET["month"])) ? $_GET["month"] : date("n");
-$nextMonth = $month + 1;
-$lastMonth = $month - 1;
-$nextYear = $year;
-$lastYear = $year;
-if ($nextMonth == 13) {
+
+  <?php
+  $year = (isset($_GET["year"])) ? $_GET["year"] : date("Y"); //get year存在 year = get year 不存在=今年
+  $month = (isset($_GET["month"])) ? $_GET["month"] : date("n");
+  $nextMonth = $month + 1;
+  $lastMonth = $month - 1;
+  $nextYear = $year;
+  $lastYear = $year;
+  if ($nextMonth >= 13) {
     $nextYear += 1;
     $nextMonth = 1;
-}
-if ($lastMonth == 0) {
+  }
+  if ($lastMonth <= 0) {
     $lastYear -= 1;
     $lastMonth = 12;
-}
-$firstday = strtotime(date("$year-$month-1"));
-$days = date("t",$firstday);
-$firstday = date("N", $firstday);
-if ($firstday == 7) {
-    $firstday = 0;
-}
-$week = ($firstday + $days) / 7;
-$tmp = 1;
-$months = [];
-for ($i = 0; $i < $week; $i++) {
+  }
+
+  $firstDay = strtotime(date("$year-$month-1")); //這個月第一天
+  $days = date("t", $firstDay); //這個月有幾天
+  $firstDay = date("w", $firstDay); //這個月第一天是星期幾 0~6
+  $week = ($firstDay + $days) / 7; //這個月有幾周
+  $tmp = 1;
+  $months = [];
+  //將這個月的日期先存在months陣列裡面
+  for ($i = 0; $i < $week; $i++) {
     for ($j = 0; $j < 7; $j++) {
-        if ($i == 0 && $j < $firstday || $tmp > $days) {
-            $months[] = '';
-        } else {
-            $months[] = date("$year-$month-$tmp");
-            $tmp++;
-        }
+      if ($i == 0 && $j < $firstDay || $tmp > $days) {
+        $months[] = '';
+      } else {
+        $months[] = date("$year-$month-$tmp");
+        $tmp++;
+      }
     }
-}
+  }
+  //今年節日的陣列
+  $holiday = [
+    "2024-1-1" => "元旦",
+    "2024-2-8" => "春節",
+    "2024-2-9" => "春節",
+    "2024-2-10" => "春節",
+    "2024-2-11" => "春節",
+    "2024-2-12" => "春節",
+    "2024-2-13" => "春節",
+    "2024-2-14" => "春節",
+    "2024-2-28" => "和平紀念日",
+    "2024-4-4" => "兒童節 清明節",
+    "2024-4-5" => "調整放假",
+    "2024-6-10" => "端午節",
+    "2024-9-17" => "中秋節",
+    "2024-10-10" => "國慶日",
+  ];
+  //補班日陣列
+  $work = [
+    "2024-2-17" => "補行上班",
+  ];
 
-$holiday = [
-    "2023-1-1" => "元旦",
-    "2023-1-2" => "補假",
-    "2023-1-20" => "調整放假",
-    "2023-1-21" => "農曆除夕",
-    "2023-1-22" => "春節",
-    "2023-1-23" => "春節",
-    "2023-1-24" => "春節",
-    "2023-1-27" => "調整放假",
-    "2023-2-27" => "調整放假",
-    "2023-2-28" => "和平紀念日",
-    "2023-4-3" => "調整放假",
-    "2023-4-4" => "兒童節",
-    "2023-4-5" => "清明節",
-    "2023-5-1" => "勞動節",
-    "2023-6-22" => "端午節",
-    "2023-6-23" => "調整放假",
-    "2023-9-3" => "軍人節",
-    "2023-9-29" => "中秋節",
-    "2023-10-9" => "調整放假",
-    "2023-10-10" => "國慶日",
-];
-$work = [
-    "2023-1-7" => "補行上班",
-    "2023-2-4" => "補行上班",
-    "2023-2-18" => "補行上班",
-    "2023-3-25" => "補行上班",
-    "2023-6-17" => "補行上班",
-    "2023-9-23" => "補行上班",
-];
-
-?>
-<div class="contain">
-<a href="?year=<?=$lastYear?>&month=<?=$lastMonth?>"><img src="./img/left-arrow.png" alt="" class="left-arrow arrow"></img></a>
+  ?>
+  <div class="contain">
+    <a href="?year=<?= $lastYear ?>&month=<?= $lastMonth ?>"><img src="./img/left-arrow.png" alt=""
+        class="left-arrow arrow"></img></a>
+    <!-- 回上個月 -->
 
     <div class="container">
-      <div class="title">
-        <span><?=$year?>年</span>
-        <span><?=$month?>月</span>
-      </div>
-      <div style="line-height:85px;font-size:26px;color:yellow">日</div>
-      <div style="line-height:85px;font-size:26px;color:white">一</div>
-      <div style="line-height:85px;font-size:26px;color:white">二</div>
-      <div style="line-height:85px;font-size:26px;color:white">三</div>
-      <div style="line-height:85px;font-size:26px;color:white">四</div>
-      <div style="line-height:85px;font-size:26px;color:white">五</div>
-      <div style="line-height:85px;font-size:26px;color:yellow">六</div>
+      <a href="?" class="title">
+        <span><?= $year ?>年</span>
+        <span><?= $month ?>月</span>
+        <div class="test">點擊回今日</div>
+      </a>
+      <!-- 顯示年跟月 點擊可以回到今天 -->
+
+      <div style="line-height:10vh;font-size:26px;color:yellow">日</div>
+      <div style="line-height:10vh;font-size:26px;color:white">一</div>
+      <div style="line-height:10vh;font-size:26px;color:white">二</div>
+      <div style="line-height:10vh;font-size:26px;color:white">三</div>
+      <div style="line-height:10vh;font-size:26px;color:white">四</div>
+      <div style="line-height:10vh;font-size:26px;color:white">五</div>
+      <div style="line-height:10vh;font-size:26px;color:yellow">六</div>
 
 
       <?php
+      
 
-for ($i = 0; $i < count($months); $i++) {
-    if (date("Y-n-j") == $months[$i]) {
-        echo "<div class=\"today";
-        if (isset($holiday[$months[$i]])) {
+      for ($i = 0; $i < count($months); $i++) {
+        if (date("Y-n-j") == $months[$i]) {//如果是今日加入today的class
+          echo "<div class=\"today";
+        }
+        if ($i % 7 == 0 || $i % 7 == 6) {//如果是六日加入weekend的class
+            echo "<div class=\"weekend";
+        }else{//如果是平日加入days的class
+            echo "<div class=\"days";
+        }
+          if (isset($holiday[$months[$i]])) {//如果是節日加入holiday的class
             echo " holiday\">";
-        } else if (isset($work[$months[$i]])) {
+          } else if (isset($work[$months[$i]])) {//如果是補班日加入work的class
             echo " work\">";
-        } else {
+          } else {
             echo "\">";
+          }
+    
+          echo date("j", strtotime($months[$i]));//顯示日期
+          echo "<div>";
+    
+          if (isset($holiday[$months[$i]])) {
+            echo $holiday[$months[$i]];//如果有節日顯示節日
+          } else if (isset($work[$months[$i]])) {
+            echo $work[$months[$i]];//如果需要補班顯示補班
+          }
+          echo "</div>";
+    
+          echo "</div>";
+          
         }
-        echo date("j", strtotime($months[$i]));
-        echo "<div>";
-        if (isset($holiday[$months[$i]])) {
-            echo $holiday[$months[$i]];
-        } else if (isset($work[$months[$i]])) {
-            echo $work[$months[$i]];
-        }
-        echo "</div>";
-
-        echo "</div>";
-    } else if ($i % 7 == 0 || $i % 7 == 6) {
-        echo "<div class=\"weekend";
-        if (isset($holiday[$months[$i]])) {
-            echo " holiday\">";
-        } else if (isset($work[$months[$i]])) {
-            echo " work\">";
-        } else {
-            echo "\">";
-        }
-        if ($months[$i] != '') {
-            echo date("j", strtotime($months[$i]));
-            echo "<div>";
-            if (isset($holiday[$months[$i]])) {
-                echo $holiday[$months[$i]];
-            } else if (isset($work[$months[$i]])) {
-                echo $work[$months[$i]];
-            }
-            echo "</div>";
-        }
-
-        echo "</div>";
-    } else {
-        echo "<div class=\"";
-        if (isset($holiday[$months[$i]])) {
-            echo " holiday\">";
-        } else if (isset($work[$months[$i]])) {
-            echo " work>\"";
-        } else {
-            echo "days\">";
-        }
-        if ($months[$i] != '') {
-            echo date("j", strtotime($months[$i]));
-            echo "<div>";
-            if (isset($holiday[$months[$i]])) {
-                echo $holiday[$months[$i]];
-            } else if (isset($work[$months[$i]])) {
-                echo $work[$months[$i]];
-            }
-            echo "</div>";
-        }
-
-        echo "</div>";
-    }
-}
-?>
+      
+      ?>
     </div>
-<a href="?year=<?=$nextYear?>&month=<?=$nextMonth?>"><img src="./img/right-arrow.png" alt="" class="right-arrow arrow"></img></a>
+    <!-- 到下個月 -->
+    <a href="?year=<?= $nextYear ?>&month=<?= $nextMonth ?>"><img src="./img/right-arrow.png" alt=""
+        class="right-arrow arrow"></img></a>
 
-    </div>
+  </div>
 </body>
 
 </html>

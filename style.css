@@ -1,0 +1,338 @@
+* {
+    box-sizing: border-box;
+    cursor: url(./img/cursor.ico), auto;
+  }
+
+  body {
+    margin: 0 auto;
+    padding: 0;
+    background-image: url(./img/bg.jpg);
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+    animation-name: bg;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+  }
+
+  @keyframes bg {
+    from {
+      background-size: 100%;
+    }
+
+    50% {
+      background-size: 120%;
+    }
+
+    to {
+      background-size: 100%;
+    }
+  }
+
+
+  .container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: 95vh;
+    margin-top: -20px;
+    justify-content: center;
+    padding: 2vh 100px 95px 100px;
+    align-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .container>div {
+    width: calc(100% / 7 - 10px);
+    height: calc(85% / 7);
+    margin: 5px;
+    padding-top: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.93);
+    font-size: 24px;
+  }
+
+  .container>a:hover {
+    background: rgba(255, 255, 255, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.93);
+
+  }
+
+  .container>div:hover {
+
+
+    background: rgba(255, 255, 255, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.93);
+    font-size: 26px;
+
+  }
+
+  .container>.today {
+    border: 2px solid yellowgreen;
+    color: yellowgreen;
+  }
+
+  .container>.weekend {
+    color: yellow;
+  }
+
+  .month {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .month>a {
+    width: 100px;
+    margin: 0 5px;
+  }
+
+  .month>span {
+    width: 100px;
+    margin: 0 5px;
+  }
+
+  
+
+  .container>.work {
+    color: white;
+  }
+
+  .container>.days {
+    color: white;
+  }
+
+  .container>.holiday {
+    color: yellow;
+  }
+
+  .container>.title {
+    width: 80vw;
+    height: 12vh;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgba(255, 255, 255, 0.93);
+    color: white;
+    margin-bottom: 20px;
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .title>span {
+    font-size: 50px;
+    line-height: 12vh;
+
+  }
+
+  .left-arrow {
+    height: 250px;
+    width: 150px;
+  }
+
+  .right-arrow {
+    height: 250px;
+    width: 150px;
+  }
+
+  .arrow:hover {
+    height: 280px;
+    width: 150px;
+  }
+
+  .star {
+    height: 800px;
+    width: 800px;
+    scale: 0.5;
+    position: fixed;
+    animation-name: star;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes star {
+    from {
+      left: -500px;
+      top: -500px;
+    }
+
+    to {
+      left: 70vw;
+      top: 1000px;
+    }
+  }
+
+  .star2 {
+    height: 800px;
+    width: 800px;
+    scale: 0.5;
+    position: fixed;
+    animation-name: star2;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes star2 {
+    from {
+      left: 0;
+      top: -1000px;
+    }
+
+    to {
+      left: 100vw;
+      top: 1000px;
+    }
+  }
+
+  .star3 {
+    height: 800px;
+    width: 800px;
+    scale: 0.5;
+    position: fixed;
+    left: -1000px;
+    animation-name: star3;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+  }
+
+  @keyframes star3 {
+    from {
+      left: -500px;
+      top: -1000px;
+    }
+
+    to {
+      left: 100vw;
+      top: 1000px;
+    }
+  }
+
+  .star4 {
+    height: 800px;
+    width: 800px;
+    scale: 0.4;
+    position: fixed;
+    left: -1000px;
+    animation-name: star4;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+  }
+
+  @keyframes star4 {
+    from {
+      left: -500px;
+      top: -500px;
+    }
+
+    to {
+      left: 70vw;
+      top: 1000px;
+    }
+  }
+
+  .star5 {
+    height: 800px;
+    width: 800px;
+    scale: 0.5;
+    position: fixed;
+    left: -1000px;
+    animation-name: star5;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+  }
+
+  @keyframes star5 {
+    from {
+      left: -900px;
+      top: -500px;
+    }
+
+    to {
+      left: 25vw;
+      top: 1000px;
+    }
+  }
+
+  .star6 {
+    height: 800px;
+    width: 800px;
+    scale: 0.5;
+    position: fixed;
+    left: -1000px;
+    animation-name: star6;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+  }
+
+  @keyframes star6 {
+    from {
+      left: 60vw;
+      top: -500px;
+    }
+
+    to {
+      left: 120vw;
+      top: 50vw;
+    }
+  }
+
+  .contain {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .test {
+    z-index: 1;
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+  }
+
+  .container>.title:hover .test {
+    visibility: visible;
+  }
+
+  .back {
+    width: 100px;
+    height: 50px;
+    border-radius: 2em;
+    position: fixed;
+    left: 2vw;
+    bottom: 2vw;
+  }
